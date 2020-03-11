@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIST N PRIME NUMBERS</title>
+</head>
+<body>
+<input type="number" id="number" placeholder="Input your number">
+<button type="button" onclick="listPrime()">LIST YOUR PRIME NUMBERS!</button>
+<div id="result"></div>
+<script>
+    function checkPrime(n) {
+        let check=1;
+        for (let i = 2; i <=Math.sqrt(n) ; i++) {
+            if(n%i===0 && n>2){
+                check=0;
+            }
+        }return check;
+    }
+    function listPrime(n) {
+        let num=document.getElementById('number').value;
+        num=parseInt(num);
+        let list='';
+        for(let i=1;i<=num;i++){
+            if (checkPrime(i)){
+                list+=i+ '<br>';
+            }
+        }document.getElementById('result').innerHTML=list;
+    }
+</script>
+</body>
+</html>
