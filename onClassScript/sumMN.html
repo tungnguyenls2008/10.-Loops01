@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function checksqrt() {
+            Number.isInteger(Math.sqrt(m, n));
+        }
+
+        function calSum() {
+            let m = document.getElementById('m');
+            m = parseInt(m.value);
+            let n = document.getElementById('n');
+            n = parseInt(n.value);
+            let s = 0, i;
+            for (i = m; i <= n; i++)
+                if (Math.sqrt(m) * Math.sqrt(m) === m && Math.sqrt(n) * Math.sqrt(n) === n) {
+                    s += i;
+                }
+            document.getElementById('sum').innerHTML = "" + s;
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p> Nhap m: <input type="text" id="m" placeholder="0" onkeyup="calSum()"></p>
+    <p> Nhap n: <input type="text" id="n" placeholder="0" onkeyup="calSum()"></p>
+    <p> Tong la: <span id="sum">0</span></p>
+</div>
+
+</body>
+</html>
