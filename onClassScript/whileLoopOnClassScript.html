@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TINH CLN CUA HAI SO</title>
+</head>
+<body>
+<input type="number" id="first" placeholder="First number">
+<input type="number" id="second" placeholder="Second number">
+<button type="button" onclick="findUSCLN()">FIND THE BIGGEST COMMON DIVISOR!</button>
+<div id="display"></div>
+<!--Nhập hai số nguyên dương a, b. Tính ước số chung lớn nhất của a, b-->
+<!--thuật toán euclid để tìm ước số chung lớn nhất của 2 số
+b1: nếu a=b thì ước số chung lớn nhất của a,b là a và b
+b2: - Nếu a<b thì b=b-a
+    - Nếu a>b thì a=a-b
+    quay lại b1.-->
+<script>
+
+    function USCLN(a, b) {
+        while (a !== b) {
+            if (a > b) {
+                a -= b;
+            } else {
+                b -= a;
+            }
+        }return a;
+    }
+    function findUSCLN() {
+        let a=+document.getElementById('first').value;
+        let b=+document.getElementById('second').value;
+        document.getElementById('display').innerHTML='the biggest common divisor between them is: '+USCLN(a,b);
+    }
+</script>
+</body>
+</html>

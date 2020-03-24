@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng các chữ số</title>
+</head>
+<body>
+<input type="number" id="num" placeholder="Input your number">
+<button type="button" onclick="displaySum()">SUM THEM UP!</button>
+<div id="display"></div>
+<script>
+    function sumNum(n) {
+
+        let sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n = Math.round(n / 10);
+        }return sum;
+
+    }
+    function displaySum() {
+        let n = +document.getElementById('num').value;
+        document.getElementById('display').innerHTML = "Summary of " + n + " is: " + sumNum(n);
+    }
+</script>
+<!--Nhập 1 số nguyên dương, tính tổng các chữ số của
+vd n=123 -> kết quả=6
+n=123456789 -> kết quả=45-->
+
+</body>
+</html>

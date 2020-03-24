@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SUM THE EVEN NUMBER</title>
+</head>
+<!--Nhập 1 số nguyên dương, tính tổng các  số chẵn của -->
+<body>
+<input type="number" id="num" placeholder="Input your number">
+<button type="button" onclick="displaySum()">SUM THEM EVEN NUMBERS UP!</button>
+<div id="display"></div>
+<script>
+    function sumNum(n) {
+
+        let sum = 0;
+        while (n > 0) {
+            if (n % 2 === 0) {
+                sum += n % 10;
+
+            }n = Math.round(n / 10);
+        }
+        return sum;
+
+    }
+
+    function displaySum() {
+        let n = +document.getElementById('num').value;
+        document.getElementById('display').innerHTML = "Summary of " + n + " is: " + sumNum(n);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SUM THEM EVEN UP!</title>
+</head>
+<body>
+<input type="number" id="start" placeholder="Starting point">
+<input type="number" id="stop" placeholder="End point">
+<button type="button" onclick="sumThemEvenUp()">SUM THEM EVEN UP!</button>
+<div id="display"></div>
+<div id="display2"></div>
+<script>
+    function sumThemEvenUp() {
+        let a, b, sum = 0;
+        let sumDisplay='';
+        a = +document.getElementById('start').value;
+        b = +document.getElementById('stop').value;
+
+        for (let i = a; i <= b; i++) {
+            if (i % 2 === 0) {
+                sum += i;
+                sumDisplay+=i;
+                sumDisplay+='; ';
+            }
+        }
+        document.getElementById('display').innerHTML = 'the result would be: ' + sum;
+        document.getElementById('display2').innerHTML = 'the even numbers would be: ' + sumDisplay;
+    }
+</script>
+</body>
+</html>

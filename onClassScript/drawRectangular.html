@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DRAW THE RECTANGLE</title>
+</head>
+<body>
+<input type="number" id="rWidth" placeholder="Width">
+<input type="number" id="rHeight" placeholder="Height">
+<button type="button" onclick="drawRectangle()">DRAW!</button>
+<div id="display"></div>
+<script>
+    function drawRectangle() {
+        let a, b;
+        a = +document.getElementById('rWidth').value;
+        b = +document.getElementById('rHeight').value;
+        let html='';
+        for (let i = 0; i < a; i++) {
+            for (let j = 0; j < b; j++) {
+                if (i === 0 || j === 0 || i === a-1 || j === b-1) {
+                    html += '*';
+                } else html+= "&nbsp;&nbsp;";
+            }
+            html+= '<br>';
+        }
+        document.getElementById('display').innerHTML=html;
+    }
+</script>
+</body>
+</html>
